@@ -105,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'secretaria.wsgi.application'
+WSGI_APPLICATION = 'secretaria.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -116,7 +116,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, os.getenv('NAME_DB'))
+        'NAME': os.path.join(BASE_DIR, os.getenv('NAME_DB')),
             #'USER':os.getenv('USER_DB')
             #'PASSWORD': os.getenv('PASSWORD_DB')
             #'HOST':os.getenv('HOST_DB')
@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 # ]
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
