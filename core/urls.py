@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
-from apps.base import views as base_views
+from django.urls import path, include
+#from apps.base import views as base_views
 
 
 # No arquivo views.py do seu app Django
@@ -29,7 +29,7 @@ from django.http import JsonResponse
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    # path('base/', base_views.base_view, name='base'),  # Rota para a view base_view	
+    path('', include('pages.urls')),  # Rota para a view da pasta pages
 ]
 
 if settings.DEBUG: # update 03/11/2024: (em homologa com debug true adiciona rota static)
