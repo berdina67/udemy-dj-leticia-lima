@@ -100,7 +100,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+				
+				#apps.base.context_processors.context_social_media, # update 08/09/2025
+				'base.context_processors.context_social',
+            ]
         },
     },
 ]
