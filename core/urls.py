@@ -18,29 +18,18 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
+from apps.base import views as base_views
+
 
 # No arquivo views.py do seu app Django
 import logging
 from django.http import JsonResponse
 
-# Obtenha o logger configurado
-logger = logging.getLogger('requestlogs')
-
-def test_logging_view(request):
-    try:
-        data = {'user': 'leticia', 'email': 'leticia@contato.com'}
-        # Força um erro proposital para testar o log
-        raise ValueError("Erro simulado no envio de email")
-    except Exception as e:
-        # Loga o erro usando o logger configurado
-        logger.error(f"{str(e)} | {str(data)}")
-        return JsonResponse({"status": "error", "message": "Ocorreu um erro."})
-
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
-    #path('', test_logging_view),  # Rota raiz para testar o logging
-    path('test/', test_logging_view, name='test-logging'),  # Rota para testar o logging
+    path('base/', base_views.base_view, name='base'),  # Rota para a view base_view	
 ]
 
 if settings.DEBUG: # update 03/11/2024: (em homologa com debug true adiciona rota static)

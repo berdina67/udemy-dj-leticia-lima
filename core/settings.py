@@ -48,7 +48,7 @@ THIRD_APPS = [ # são as Lib/app que instalamos no projeto
 ]
 
 PROJECT_APPS = [ # são os apps que criamos no projeto 
-        # 'apps.base',		# update 11/03/2024
+        'apps.base', # update 11/03/2024
         # 'apps.myapp',   # Removido esses apps que nao criamos ainda.
 ]
 
